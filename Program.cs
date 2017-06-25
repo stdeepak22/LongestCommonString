@@ -11,9 +11,10 @@ namespace LongestCommonString
         static void Main(string[] args)
         {
             int rowCount = 0;
-            
+            var isUser = false;
             if (args == null || args.Length == 0)
             {
+                isUser = true;
                 Console.WriteLine("How many rows you can to enter?");
                 rowCount = int.Parse(Console.ReadLine());
                 args = new string[rowCount];
@@ -27,7 +28,10 @@ namespace LongestCommonString
             var commonText = obj.Run(args);
 
             Console.WriteLine($"Longest Common text in {args.Length} lines is = '{commonText}'");
-            Console.ReadLine();
+            if (isUser)
+            {
+                Console.ReadLine(); 
+            }
         }
     }
 }
